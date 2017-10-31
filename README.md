@@ -1,14 +1,22 @@
 # owski/mysqltuner
 
-Lightweight Alpine container for [mysqltuner](https://github.com/major/MySQLTuner-perl). 
+Lightweight Alpine container for [MySQLTuner](https://github.com/major/MySQLTuner-perl). 
 
 # Usage
 
-For general `mysqltuner` help, run:
+This container will always pull the latest version of [MySQLTuner](https://github.com/major/MySQLTuner-perl). The following will get you started:
 
+```sh
+docker run -it --rm owski/mysqltuner --host <hostname> \
+> --user <username> \
+> --pass <password> \
+> --forcemem <size>
 ```
-docker run -it --rm owski/mysqltuner --help
-```
+
+Since this docker contianer will always be communicating with a remote MySQL instance, the `--forcemem` option must be used to specify the RAM on the external server.
+
+For a list of all MySQLTuner options, run: `docker run -it --rm owski/mysqltuner --help`
+
 ```
 Name:
      MySQLTuner 1.7.4 - MySQL High Performance Tuning Script
