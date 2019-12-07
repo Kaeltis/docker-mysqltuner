@@ -1,4 +1,4 @@
-# owski/mysqltuner
+# kaeltis/mysqltuner
 
 Lightweight Alpine container for [MySQLTuner](https://github.com/major/MySQLTuner-perl). 
 
@@ -7,7 +7,7 @@ Lightweight Alpine container for [MySQLTuner](https://github.com/major/MySQLTune
 This container will always pull the latest version of [MySQLTuner](https://github.com/major/MySQLTuner-perl). The following will get you started:
 
 ```sh
-docker run -it --rm owski/mysqltuner --host <hostname> \
+docker run -it --rm kaeltis/mysqltuner --host <hostname> \
 > --user <username> \
 > --pass <password> \
 > --forcemem <size>
@@ -15,11 +15,11 @@ docker run -it --rm owski/mysqltuner --host <hostname> \
 
 Since this docker contianer will always be communicating with a remote MySQL instance, the `--forcemem` option must be used to specify the RAM on the external server.
 
-For a list of all MySQLTuner options, run: `docker run -it --rm owski/mysqltuner --help`
+For a list of all MySQLTuner options, run: `docker run -it --rm kaeltis/mysqltuner --help`
 
 ```
 Name:
-     MySQLTuner 1.7.4 - MySQL High Performance Tuning Script
+     MySQLTuner 1.7.19 - MySQL High Performance Tuning Script
 
 Important Usage Guidelines:
     To run the script with the default options, run the script without
@@ -28,7 +28,7 @@ Important Usage Guidelines:
     (script will provide warnings) You must provide the remote server's
     total memory when connecting to other servers
 
-Connection and Authentification:
+Connection and Authentication:
      --host <hostname>           Connect to a remote host to perform tests (default: localhost)
      --socket <socket>           Use a different socket for a local connection
      --port <port>               Port to use for connection (default: 3306)
@@ -57,10 +57,18 @@ Output Options:
      --nobad                     Remove negative/suggestion responses
      --noinfo                    Remove informational responses
      --debug                     Print debug information
+     --noprocess                Consider no other process is running
      --dbstat                    Print database information
+     --nodbstat                  Don't Print database information
+     --tbstat                    Print table information
+     --notbstat                  Don't Print table information
      --idxstat                   Print index information
+     --noidxstat                 Don't Print index information
      --sysstat                   Print system information
+     --nosysstat                 Don't Print system information
      --pfstat                    Print Performance schema
+     --nopfstat                  Don't Print Performance schema
+     --verbose                   Prints out all options (default: no verbose, dbstat, idxstat, sysstat, tbstat, pfstat)
      --bannedports               Ports banned separated by comma(,)
      --maxportallowed            Number of ports opened allowed on this hosts
      --cvefile <path>            CVE File for vulnerability checks
@@ -70,5 +78,4 @@ Output Options:
      --outputfile <path>         Path to a output txt file
      --reportfile <path>         Path to a report txt file
      --template   <path>         Path to a template file
-     --verbose                   Prints out all options (default: no verbose)
 ```
