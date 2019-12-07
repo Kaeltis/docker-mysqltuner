@@ -1,10 +1,10 @@
 # kaeltis/mysqltuner
 
-Lightweight Alpine container for [MySQLTuner](https://github.com/major/MySQLTuner-perl). 
+Lightweight Alpine container for [MySQLTuner](https://github.com/major/MySQLTuner-perl) v1.7.19
 
 # Usage
 
-This container will always pull the latest version of [MySQLTuner](https://github.com/major/MySQLTuner-perl). The following will get you started:
+The following will get you started:
 
 ```sh
 docker run -it --rm kaeltis/mysqltuner --host <hostname> \
