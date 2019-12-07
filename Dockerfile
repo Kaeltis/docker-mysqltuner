@@ -1,5 +1,5 @@
 FROM alpine
-MAINTAINER Josh Grochowski <josh.kastang@gmail.com>
+MAINTAINER Patrick Fruh <patrick@kaeltis.de>
 
 RUN \
 	apk --no-cache add \
