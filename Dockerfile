@@ -14,3 +14,4 @@ RUN \
 	&& wget https://raw.githubusercontent.com/major/MySQLTuner-perl/master/vulnerabilities.csv -O vulnerabilities.csv
 
 ENTRYPOINT ["perl", "mysqltuner.pl"]
+CMD ["--help"]
